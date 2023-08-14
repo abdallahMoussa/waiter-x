@@ -1,0 +1,28 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: circleci/php:8.1
+    steps:
+      - checkout
+
+      # Install dependencies
+      - run:
+          name: Install PHP dependencies
+          command: composer install --no-interaction --no-scripts --no-progress --prefer-dist
+
+      # Run database migrations
+      - run:
+          name: Run database migrations
+          command: php artisan migrate --force
+
+      # Clear configuration cache
+      - run:
+          name: Clear configuration cache
+          command: php artisan config:clear
+
+workflows:
+  version: 2
+  build-and-test:
+    jobs:
+      - build
