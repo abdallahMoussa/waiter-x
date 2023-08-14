@@ -6,23 +6,23 @@ jobs:
     steps:
       - checkout
 
-      # Install PHP dependencies
-      - run:
-          name: Install PHP dependencies
-          command: composer install --no-interaction --no-scripts --no-progress --prefer-dist
+      # Configure SSH connection
+      - add_ssh_keys:
+          fingerprints:
+            - "15:93:4f:b5:03:d9:61:ee:2f:4d:9c:e8:1f:9c:66:62"
 
-      # Run database migrations
+      # Run commands on your host through SSH
       - run:
-          name: Run database migrations
-          command: php artisan migrate --force
-
-      # Clear configuration cache
-      - run:
-          name: Clear configuration cache
-          command: php artisan config:clear
+          name: Run commands on host
+          command: ssh user@your-host "echo 'Hello, SSH!'"
 
 workflows:
   version: 2
   build-and-test:
     jobs:
       - build
+```
+
+Update `<your-ssh-key-fingerprint>` with the fingerprint of the SSH key you added to CircleCI.
+
+Adjust the SSH command in the "Run commands on host" step to execute the desired commands on your host.
