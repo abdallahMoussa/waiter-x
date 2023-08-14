@@ -20,12 +20,14 @@ class MyCustomEmail extends Mailable
      */
     public $name;
     public $phone;
+    public $email;
     public $content;
 
     public function __construct(array $data)
     {
         $this->name = $data['name'];
         $this->phone = $data['phone'];
+        $this->email = $data['email'];
         $this->content = $data['content'];
     }
 
