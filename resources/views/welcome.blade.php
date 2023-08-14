@@ -96,7 +96,7 @@
                                             <!-- <a onclick="hidePrices()" class="page-scroll" href="#contact">تواصل معنا </a> -->
                                         </li>
                                         <li class="nav-item">
-                                            <a onclick="hidePrices()" class="page-scroll" href="#pricing">الأسعار</a>
+                                            <!-- <a onclick="hidePrices()" class="page-scroll" href="#pricing">الأسعار</a> -->
                                         </li>
                                         <li class="nav-item">
                                             <a onclick="hidePrices()" class="page-scroll" href="#about">الاونلاين منيو</a>
