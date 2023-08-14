@@ -17,11 +17,11 @@ jobs:
           fingerprints:
             - "15:93:4f:b5:03:d9:61:ee:2f:4d:9c:e8:1f:9c:66:62"
 
-      # SSH into the server and run commands
+      # SSH into the server and run commands with verbose logging
       - run:
           name: Run commands on server
           command: |
-            ssh -o "StrictHostKeyChecking=no" -o "HostKeyAlgorithms=ssh-rsa,ssh-dss" -p 21098 xwaismji@server66.web-hosting.com "cd ~/public_html && git pull && php artisan migrate --force && php artisan config:clear"
+            ssh -v -o "StrictHostKeyChecking=no" -o "HostKeyAlgorithms=ssh-rsa" -p 21098 xwaismji@server66.web-hosting.com "cd ~/public_html && git pull && php artisan migrate --force && php artisan config:clear"
 
 workflows:
   version: 2
