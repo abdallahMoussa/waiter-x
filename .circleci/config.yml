@@ -21,8 +21,3 @@ workflows:
   build-and-test:
     jobs:
       - build
-```
-
-Update `<your-ssh-key-fingerprint>` with the fingerprint of the SSH key you added to CircleCI.
-
-Adjust the SSH command in the "Run commands on host" step to execute the desired commands on your host.
