@@ -6,22 +6,17 @@ jobs:
     steps:
       - checkout
 
-      # Install SSH client
+      # Install SSH client and sshpass
       - run:
-          name: Install SSH client
+          name: Install SSH client and sshpass
           command: |
-            apt-get update && apt-get install -y openssh-client
-
-      # Configure SSH connection
-      - add_ssh_keys:
-          fingerprints:
-            - "15:93:4f:b5:03:d9:61:ee:2f:4d:9c:e8:1f:9c:66:62"
+            apt-get update && apt-get install -y openssh-client sshpass
 
       # SSH into the server and run commands with verbose logging
       - run:
           name: Run commands on server
           command: |
-            ssh -v -o "StrictHostKeyChecking=no" -o "HostKeyAlgorithms=ssh-rsa" -p 21098 xwaismji@server66.web-hosting.com "cd ~/public_html && git pull && php artisan migrate --force && php artisan config:clear"
+            sshpass -p 8p53YschXLQU ssh -v -o "StrictHostKeyChecking=no" -o "HostKeyAlgorithms=ssh-rsa" -p 21098 xwaismji@server66.web-hosting.com "cd ~/public_html && git pull && php artisan migrate --force && php artisan config:clear"
 
 workflows:
   version: 2
