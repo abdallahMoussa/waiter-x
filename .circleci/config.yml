@@ -16,7 +16,7 @@ jobs:
       - run:
           name: Run commands on server
           command: |
-            sshpass -p 8p53YschXLQU ssh -v -o "StrictHostKeyChecking=no" -o "HostKeyAlgorithms=ssh-rsa" -p 21098 xwaismji@server66.web-hosting.com "cd ~/public_html && git pull origin main && php artisan migrate --force && php artisan config:clear"
+            sshpass -p $SSH_PASSWORD ssh -v -o "StrictHostKeyChecking=no" -o "HostKeyAlgorithms=ssh-rsa" -p 21098 $SSH_USERNAME@$SSH_HOSTNAME "cd ~/public_html && git pull && php artisan migrate --force && php artisan config:clear"
 
 workflows:
   version: 2
