@@ -93,7 +93,7 @@
                                 <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent6">
                                     <ul id="nav6" class="navbar-nav ms-auto">
                                         <li class="nav-item">
-                                            <a onclick="hidePrices()" class="page-scroll" href="#contact">تواصل معنا </a>
+                                            <!-- <a onclick="hidePrices()" class="page-scroll" href="#contact">تواصل معنا </a> -->
                                         </li>
                                         <li class="nav-item">
                                             <a onclick="hidePrices()" class="page-scroll" href="#pricing">الأسعار</a>
@@ -102,7 +102,7 @@
                                             <a onclick="hidePrices()" class="page-scroll" href="#about">الاونلاين منيو</a>
                                         </li>
                                         <li class="nav-item">
-                                            <!-- <a onclick="hidePrices()" class="page-scroll" href="#feature">خدمات </a> -->
+                                            <a onclick="hidePrices()" class="page-scroll" href="#feature">خدمات </a>
                                         </li>
                                         <li class="nav-item">
                                             <a onclick="hidePrices()" class="page-scroll active" href="#home">الرئيسيه</a>
