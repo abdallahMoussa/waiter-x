@@ -6,8 +6,8 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title> Waiter-X ~ ويتر إكس</title>
-    <meta name="description" content="أحد الحلول الذكية والعصرية فى إداره المطاعم والكافيهات" />
+    <title> X-waiter ~ إكس ويتر </title>
+    <meta name="description" content="إكس ويتر أحد الحلول الذكية والعصرية فى إداره المطاعم والكافيهات" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Place favicon.ico in the root directory -->
     <link rel="icon" type="image/png" href="/assets/img/favicon.icon">
@@ -17,17 +17,21 @@
     <link rel="stylesheet" href="assets/css/tiny-slider.css" />
     <link rel="stylesheet" href="assets/css/animate.css" />
     <link rel="stylesheet" href="assets/css/lindy-uikit.css" />
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
     <script>
-        function showPrices() {
+        function showPrices(toTop = true) {
             window.pricingPage.style.display = "block";
             window.hero.style.display = "none";
             window.feature.style.display = "none";
             window.about.style.display = "none";
             window.pricing.style.display = "none";
             window.contact.style.display = "none";
-            setTimeout(() => {
-                window.scrollTo(0, 0);
-            }, 100);
+            if (toTop) {
+                setTimeout(() => {
+                    window.scrollTo(0, 0);
+                }, 100);
+            }
         }
 
         function hidePrices() {
@@ -40,17 +44,23 @@
 
         }
     </script>
+    <script>
+        function onClick(e) {
+            e.preventDefault();
+            grecaptcha.enterprise.ready(async () => {
+                const token = await grecaptcha.enterprise.execute('6Lc20ZInAAAAAAmchiwawDXFPpU78NZIq4Yl0zbD', {
+                    action: 'LOGIN'
+                });
+                // IMPORTANT: The 'token' that results from execute is an encrypted response sent by
+                // reCAPTCHA Enterprise to the end user's browser.
+                // This token must be validated by creating an assessment.
+                // See https://cloud.google.com/recaptcha-enterprise/docs/create-assessment
+            });
+        }
+    </script>
 </head>
 
 <body>
-
-    <!--[if lte IE 9]>
-      <p class="browserupgrade">
-        You are using an <strong>outdated</strong> browser. Please
-        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
-        your experience and security.
-      </p>
-    <![endif]-->
 
     <!-- ========================= preloader start ========================= -->
     <div class="preloader">
@@ -80,10 +90,31 @@
                     <div class="row align-items-center">
                         <div class="col-lg-12">
                             <nav class="navbar navbar-expand-lg">
-                                <a class="navbar-brand d-flex" href="index.html">
-                                    <span class="logo-name ">Waiter</span>
-                                    <img src="assets/img/logo/logo.png" alt="Logo" />
+                                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent6">
+                                    <ul id="nav6" class="navbar-nav ms-auto">
+                                        <li class="nav-item">
+                                            <a onclick="hidePrices()" class="page-scroll" href="#contact">تواصل معنا </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a onclick="hidePrices()" class="page-scroll" href="#pricing">الأسعار</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a onclick="hidePrices()" class="page-scroll" href="#about">الاونلاين منيو</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <!-- <a onclick="hidePrices()" class="page-scroll" href="#feature">خدمات </a> -->
+                                        </li>
+                                        <li class="nav-item">
+                                            <a onclick="hidePrices()" class="page-scroll active" href="#home">الرئيسيه</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+
+                                <a class="navbar-brand d-flex" onclick="hidePrices()" href="#home">
                                     <span class="logo-name2 ">ويتر</span>
+                                    <img src="assets/img/logo/logo.png" alt="Logo" />
+                                    <span class="logo-name ">Waiter</span>
 
                                 </a>
                                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent6" aria-controls="navbarSupportedContent6" aria-expanded="false" aria-label="Toggle navigation">
@@ -91,28 +122,6 @@
                                     <span class="toggler-icon"></span>
                                     <span class="toggler-icon"></span>
                                 </button>
-
-                                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent6">
-                                    <ul id="nav6" class="navbar-nav ms-auto">
-                                        <li class="nav-item">
-                                            <a onclick="hidePrices()" class="page-scroll active" href="#home">الرئيسيه</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a onclick="hidePrices()" class="page-scroll" href="#feature">خدمات </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a onclick="hidePrices()" class="page-scroll" href="#about">الاونلاين منيو</a>
-                                        </li>
-
-                                        <li class="nav-item">
-                                            <a onclick="hidePrices()" class="page-scroll" href="#pricing">الأسعار</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a onclick="hidePrices()" class="page-scroll" href="#contact">تواصل معنا </a>
-                                        </li>
-                                    </ul>
-                                </div>
-
 
                                 <!-- navbar collapse -->
                             </nav>
@@ -135,15 +144,15 @@
                         <div class="hero-content-wrapper">
                             <h2 class="mb-30 wow fadeInUp font " style="text-align: right; line-height: 80px; " data-wow-delay=".2s">
                                 <span>
-                                    ويتر إكس لإدارة المطاعم والكافيهات
+                                    إكس ويتر لإدارة المطاعم والكافيهات
                                 </span>
                             </h2>
                             <p class="mb-20 wow fadeInUp" style="text-align: right;" data-wow-delay=".4s">
                                 العميل هيطلب الاوردر ويقدر يعدل الطلب من خلال الموبايل<br />
-                                مع ويتر إكس إداره مطعمك هتبقى اسهل بكتير
+                                مع إكس ويتر إداره مطعمك هتبقى اسهل بكتير
                             </p>
                             <p class="mb-20 wow fadeInUp text-primary" data-wow-delay=".4s">
-                                فترة تجريبيه مجانيه 10 أيام على باقات الويتر إكس
+                                فترة تجريبيه مجانيه 10 أيام على باقات الإكس ويتر
                             </p>
                             <button class="button button-lg radius-50 wow fadeInUp" data-wow-delay=".6s" onclick="showPrices()">بدء الاستخدام <i class="lni lni-chevron-right"></i>
                             </button>
@@ -173,8 +182,8 @@
                                     <span class="my-2 d-block">1.400 ج.م</span>
                                 </div>
                                 <div class="col-2 text-xl-center text-primary">
-                                    <h6 class="font ">باقة ويتر إكس</h6>
-                                    <span class="my-2 d-block">1600 ج.م</span>
+                                    <h6 class="font ">باقة إكس ويتر </h6>
+                                    <span class="my-2 d-block">1800 ج.م</span>
                                 </div>
                             </div>
                             <hr />
@@ -259,20 +268,72 @@
 
 
                         </div>
-                        <div id="message" class=" justify-content-center animate__animated animate__fadeIn duration-message">
-                            <p class="font rounded-3" style="background-color: ghostwhite; padding:10px 20px;font-weight: 100; text-align: center;">
-                                من فضلك قم بملئ بيانات إستمارة التواصل بإسم الباقة التى ترغب فى الاشتراك بها.<br />
-                                <a onclick="hidePrices()" href="#contact" class="pt-2 d-block">ملئ الإستماره</a>
-                            </p>
+                        <div class="contact-section contact-style-3 contact-style-2">
+                            <div class="container">
+                                <div class="row justify-content-center animate__animated animate__fadeIn ">
+                                    <div class="col-lg-12">
+                                        <div class="contact-form-wrapper">
+                                            <form id="myForm" method="POST" action="{{ route('subscribe') }}">
+                                                @csrf
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="single-input">
+                                                            <input required type="text" id="name" name="name" class="form-input" placeholder="الاسم " />
+                                                            <i class="lni lni-phone"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="single-input">
+                                                            <input required type="text" id="number" name="phone" class="form-input" placeholder="رقم الهاتف" />
+                                                            <i class="lni lni-phone"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="single-input">
+                                                            <input required type="email" id="email" name="email" class="form-input" placeholder="البريد الالكتروني" />
+                                                            <i style="font-style: normal; font-size: 16pt; margin-top: -6px;">@</i>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="col-md-12">
+                                                        <div class="single-input">
+                                                            <select class="form-select" aria-label="Default select example">
+                                                                <option value="1">باقة الكاشير</option>
+                                                                <option value="2">باقة الويتر</option>
+                                                                <option value="3">باقة إكس ويتر</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="g-recaptcha col-md-12" data-sitekey="6Lc20ZInAAAAAAmchiwawDXFPpU78NZIq4Yl0zbD"></div>
+
+                                                <div class="d-flex justify-content-center  pt-10">
+                                                    <button type="submit" id="subscribe" class="button radius-30 m-auto d-flex flex-row-reverse gap-1">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                                            <path fill="currentColor" d="M18 10h-4V6a2 2 0 0 0-4 0l.071 4H6a2 2 0 0 0 0 4l4.071-.071L10 18a2 2 0 0 0 4 0v-4.071L18 14a2 2 0 0 0 0-4z" />
+                                                        </svg>
+                                                        <span> إشتراك</span>
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="d-flex justify-content-center  pt-10">
-                            <button id="subscribe" class="button radius-30 m-auto d-flex flex-row-reverse gap-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                    <path fill="currentColor" d="M18 10h-4V6a2 2 0 0 0-4 0l.071 4H6a2 2 0 0 0 0 4l4.071-.071L10 18a2 2 0 0 0 4 0v-4.071L18 14a2 2 0 0 0 0-4z" />
-                                </svg>
-                                <span> إشتراك</span>
-                            </button>
+
+                        @if(session('successSub'))
+                        <div dir="rtl" class="alert alert-success mt-3">
+                            {{ session('successSub') }}
                         </div>
+                        @elseif(session('error'))
+                        <div class="alert alert-danger mt-3">
+                            {{ session('error') }}
+                        </div>
+                        @endif
+
 
                     </div>
                 </div>
@@ -293,7 +354,7 @@
                             إدارة المطاعم والكافيهات
                         </h3>
                         <p class="wow fadeInUp" data-wow-delay=".4s">
-                            <span class="waiter-x-name">ويتر إكس</span>
+                            <span class="waiter-x-name">إكس ويتر </span>
                             حل متكامل لإدارة مطعمك وكافيهك بكل سهوله وتحليل البييانات لتحسين الخدمة والوصول لأقصي درجه الربح وإرضاء للعميل
 
                         </p>
@@ -359,7 +420,7 @@
     <!-- ========================= about style-4 start ========================= -->
     <section id="about" class="about-section about-style-4">
         <div class="container">
-            <div class="row align-items-center ">
+            <div class="row align-items-center">
 
                 <div class="col-xl-6 col-lg-6">
                     <div class="about-image text-lg-right wow fadeInUp" data-wow-delay=".5s">
@@ -408,13 +469,13 @@
     <section id="pricing" class="pricing-section pricing-style-4 bg-light">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-xl-5 col-lg-6">
+                <div class="col-xl-5 col-lg-6" dir="rtl">
                     <div class="section-title mb-60 ">
                         <h3 class="mb-15 wow fadeInUp font text-right" data-wow-delay=".2s">
                             إختر الباقة الأنسب لمطعمك
                         </h3>
                         <p class="wow fadeInUp" data-wow-delay=".4s">
-                            ويتر إكس بيقدملك الحل الامثل لإداره مطعمك أي كان مستواه سواء كنت مطعم للخدمات السريعه او مطعم كبير لخدمة الطاولات
+                            إكس ويتر بيقدملك الحل الامثل لإداره مطعمك أي كان مستواه سواء كنت مطعم للخدمات السريعه او مطعم كبير لخدمة الطاولات
                         </p>
                     </div>
                 </div>
@@ -451,9 +512,9 @@
                             </div>
                             <div class="single-pricing-wrapper">
                                 <div class="single-pricing">
-                                    <h4 class="font">باقة ويتر إكس</h4>
+                                    <h4 class="font">باقة إكس ويتر </h4>
                                     <h6 class="font"> المطاعم الكبيرة والفنادق </h6>
-                                    <h3 class="font d-flex flex-row-reverse justify-content-center gap-2"> <span>1.600</span> <span class="font-size-sm">ج.م </span> </h3>
+                                    <h3 class="font d-flex flex-row-reverse justify-content-center gap-2"> <span>1.800</span> <span class="font-size-sm">ج.م </span> </h3>
                                     <ul>
                                         <li>اونلاين منيو</li>
                                         <li> لوحة تحليل البيانات </li>
@@ -471,7 +532,7 @@
         </div>
         <div class="d-flex justify-content-center pt-10">
 
-            <button onclick="showPrices()" class="button radius-30 m-auto"> فصل باقتك بنفسك </button>
+            <button onclick="showPrices()" class="button radius-30 m-auto">تفاصيل الباقات </button>
         </div>
 
     </section>
@@ -491,47 +552,6 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-8">
-                    <div class="contact-form-wrapper">
-                        <form id="contact-form" method="POST" action="{{ route('sendEmail') }}">
-                            @csrf
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="single-input">
-                                        <input required type="text" id="name" name="name" class="form-input" placeholder="الاسم" />
-                                        <i class="lni lni-user"></i>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <div class="single-input">
-                                        <input required type="text" id="number" name="phone" class="form-input" placeholder="رقم الهاتف" />
-                                        <i class="lni lni-phone"></i>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="single-input">
-                                        <textarea required name="content" id="content" class="form-input" placeholder="الرساله" rows="6"></textarea>
-                                        <i class="lni lni-comments-alt"></i>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-button">
-                                        <button type="submit" class="button">
-                                            <i class="lni lni-telegram-original"></i> إرسال
-                                        </button>
-                                    </div>
-                                </div>
-
-                                @if(session('success'))
-                                <div class="alert alert-success mt-3">
-                                    {{ session('success') }}
-                                </div>
-                                @endif
-                            </div>
-                        </form>
-                    </div>
-                </div>
 
                 <div class="col-lg-4">
                     <div class="left-wrapper">
@@ -554,7 +574,8 @@
                                         <i class="lni lni-envelope"></i>
                                     </div>
                                     <div class="text">
-                                        <p class="font-size-sm">waiter.x.services@gmail.com</p>
+                                        <p class="font-size-sm">
+                                            support@xwaiter.com</p>
                                     </div>
                                 </div>
                             </div>
@@ -573,6 +594,56 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-8">
+                    <div class="contact-form-wrapper">
+                        <form id="contact-form" method="POST" action="{{ route('sendEmail') }}">
+                            @csrf
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="single-input">
+                                        <input required type="text" id="name" name="name" class="form-input" placeholder="الاسم" />
+                                        <i class="lni lni-user"></i>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="single-input">
+                                        <input required type="text" id="number" name="phone" class="form-input" placeholder="رقم الهاتف" />
+                                        <i class="lni lni-phone"></i>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="single-input">
+                                        <input required type="email" id="email" name="email" class="form-input" placeholder="البريد الالكتروني" />
+                                        <i style="font-style: normal; font-size: 16pt; margin-top: -6px;">@</i>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="single-input">
+                                        <textarea required name="content" id="content" class="form-input" placeholder="الرساله" rows="6"></textarea>
+                                        <i class="lni lni-comments-alt"></i>
+                                    </div>
+                                </div>
+                                <div class="g-recaptcha col-md-12" data-sitekey="6Lc20ZInAAAAAAmchiwawDXFPpU78NZIq4Yl0zbD"></div>
+                                <div class="col-md-12">
+                                    <div class="form-button">
+                                        <button type="submit" class="button">
+                                            <i class="lni lni-telegram-original"></i> إرسال
+                                        </button>
+                                    </div>
+                                </div>
+
+                                @if(session('success'))
+                                <div dir="rtl" class="alert alert-success mt-3">
+                                    {{ session('success') }}
+                                </div>
+                                @endif
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -597,16 +668,16 @@
         <div class="container">
             <div class="widget-wrapper">
                 <div class="row">
-                    <div class="col-xl-3 col-lg-4 col-md-6 ">
+                    <div class="col-xl-5 col-lg-4 col-md-12 " dir="rtl">
                         <div class="footer-widget wow fadeInUp" data-wow-delay=".2s">
                             <div class="logo">
                                 <a class="navbar-brand d-flex" href="index.html">
-                                    <span class="logo-name ">Waiter</span>
-                                    <img src="assets/img/logo/logo.png" width="60" alt="Logo" />
                                     <span class="logo-name2 ">ويتر</span>
+                                    <img src="assets/img/logo/logo.png" width="60" alt="Logo" />
+                                    <span class="logo-name ">Waiter</span>
                                 </a>
                             </div>
-                            <p class="desc" style="text-align: right;">
+                            <p class="desc" style="text-align: right; padding-right:20px">
                                 أحد أهم الحلول الذكيه والعصريه فى إدارة المطاعم والكافيهات بكافة احجامها واشكلها
                             </p>
                             <ul class="socials">
@@ -621,13 +692,11 @@
                                 <li>
                                     <a href="https://www.instagram.com/waiter_x_services/"> <i class="lni lni-instagram-filled"></i> </a>
                                 </li>
-                                <!-- <li>
-                    <a href="https://www.facebook.com/Xwaiter"> <i class="lni lni-linkedin-original"></i> </a>
-                  </li> -->
+
                             </ul>
                         </div>
                     </div>
-                    <div class="col-xl-4 offset-xl-2 col-lg-4 col-md-5 offset-md-1 col-sm-6">
+                    <div class="col-xl-4 offset-xl-0 col-lg-4 col-md-6 offset-md-1 col-sm-5">
                         <div class="footer-widget wow fadeInUp" data-wow-delay=".3s">
                             <h6 class="font">روابط سريعه </h6>
                             <ul class="links">
@@ -639,7 +708,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-2 col-md-12 col-sm-6">
+                    <div class="col-xl-3 col-lg-2 col-md-5 col-sm-6">
                         <div class="footer-widget wow fadeInUp" data-wow-delay=".4s">
                             <h6 class="font">الخدمات</h6>
                             <ul class="links">
@@ -676,6 +745,17 @@
             });
         });
     </script>
+    @elseif(session('scrollToFormSub'))
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            showPrices(false)
+            // Scroll to the form element with smooth animation
+            document.querySelector("#myForm").scrollIntoView({
+                behavior: "smooth"
+            });
+        });
+    </script>
+
     @endif
 </body>
 
