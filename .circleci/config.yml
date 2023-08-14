@@ -21,7 +21,7 @@ jobs:
       - run:
           name: Run commands on server
           command: |
-            ssh xwaismji@server66.web-hosting.com "cd ~/public_html && echo 'Hello, SSH!' && php artisan migrate --force && php artisan config:clear"
+            ssh -p 21098 xwaismji@server66.web-hosting.com "cd ~/public_html && git pull && echo 'Hello, SSH!' && php artisan migrate --force && php artisan config:clear"
 
 workflows:
   version: 2
