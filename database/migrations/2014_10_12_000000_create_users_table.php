@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->string('email', 191)->unique();
             $table->string('content')->nullable();;
-            $table->boolean('subscribed');
+            $table->boolean('subscribed')->default(0);
             $table->timestamps();
         });
     }
