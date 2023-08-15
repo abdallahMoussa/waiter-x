@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('phone');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('content');
             $table->boolean('subscribed');
             $table->timestamp('email_verified_at')->nullable();
