@@ -18,8 +18,6 @@ return new class extends Migration
             $table->string('email', 191)->unique();
             $table->string('content');
             $table->boolean('subscribed');
-            $table->timestamp('email_verified_at')->nullable();
-            $table->rememberToken();
             $table->timestamps();
         });
     }
