@@ -7,7 +7,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title> X-waiter ~ إكس ويتر </title>
-    <meta name="description" content="إكس ويتر أحد الحلول الذكية والعصرية فى إداره المطاعم والكافيهات" />
+    <meta name="description" content="إكس ويتر أحد الحلول الذكية والعصرية فى إدارة المطاعم والكافيهات" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Place favicon.ico in the root directory -->
     <link rel="icon" type="image/png" href="/assets/img/favicon.icon">
@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="assets/css/tiny-slider.css" />
     <link rel="stylesheet" href="assets/css/animate.css" />
     <link rel="stylesheet" href="assets/css/lindy-uikit.css" />
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 
     <script>
         function showPrices(toTop = true) {
@@ -44,20 +44,7 @@
 
         }
     </script>
-    <script>
-        function onClick(e) {
-            e.preventDefault();
-            grecaptcha.enterprise.ready(async () => {
-                const token = await grecaptcha.enterprise.execute('6Lc20ZInAAAAAAmchiwawDXFPpU78NZIq4Yl0zbD', {
-                    action: 'LOGIN'
-                });
-                // IMPORTANT: The 'token' that results from execute is an encrypted response sent by
-                // reCAPTCHA Enterprise to the end user's browser.
-                // This token must be validated by creating an assessment.
-                // See https://cloud.google.com/recaptcha-enterprise/docs/create-assessment
-            });
-        }
-    </script>
+
 </head>
 
 <body>
@@ -93,19 +80,19 @@
                                 <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent6">
                                     <ul id="nav6" class="navbar-nav ms-auto">
                                         <li class="nav-item">
-                                            <!-- <a onclick="hidePrices()" class="page-scroll" href="#contact">تواصل معنا </a> -->
+                                            <a onclick="hidePrices()" class="page-scroll" href="#contact">تواصل معنا </a>
                                         </li>
                                         <li class="nav-item">
-                                            <!-- <a onclick="hidePrices()" class="page-scroll" href="#pricing">الأسعار</a> -->
+                                            <a onclick="hidePrices()" class="page-scroll" href="#pricing">الأسعار</a>
                                         </li>
                                         <li class="nav-item">
                                             <a onclick="hidePrices()" class="page-scroll" href="#about">الاونلاين منيو</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a onclick="hidePrices()" class="page-scroll" href="#feature">خدمات </a>
+                                            <a onclick="hidePrices()" class="page-scroll" href="#feature">خدماتنا </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a onclick="hidePrices()" class="page-scroll active" href="#home">الرئيسيه</a>
+                                            <a onclick="hidePrices()" class="page-scroll active" href="#home">الرئيسية</a>
                                         </li>
 
                                     </ul>
@@ -149,7 +136,7 @@
                             </h2>
                             <p class="mb-20 wow fadeInUp" style="text-align: right;" data-wow-delay=".4s">
                                 العميل هيطلب الاوردر ويقدر يعدل الطلب من خلال الموبايل<br />
-                                مع إكس ويتر إداره مطعمك هتبقى اسهل بكتير
+                                مع إكس ويتر إدارة مطعمك هتبقى اسهل بكتير
                             </p>
                             <p class="mb-20 wow fadeInUp text-primary" data-wow-delay=".4s">
                                 فترة تجريبيه مجانيه 10 أيام على باقات الإكس ويتر
@@ -183,7 +170,7 @@
                                 </div>
                                 <div class="col-2 text-xl-center text-primary">
                                     <h6 class="font ">باقة إكس ويتر </h6>
-                                    <span class="my-2 d-block">1800 ج.م</span>
+                                    <span class="my-2 d-block">1.800 ج.م</span>
                                 </div>
                             </div>
                             <hr />
@@ -201,19 +188,19 @@
                                     <td class="col-"><i class="lni lni-checkmark-circle text-primary"></i></td>
                                 </tr>
                                 <tr class="col-12" style="border-bottom: 1px solid gainsboro;">
-                                    <td class="col-6">إداره الطلبات </td>
+                                    <td class="col-6">إدارة الطلبات </td>
                                     <td class="col-2"><i class="lni lni-checkmark-circle text-primary my-3"></i></td>
                                     <td class="col-2"><i class="lni lni-checkmark-circle text-primary"></i></td>
                                     <td class="col-"><i class="lni lni-checkmark-circle text-primary"></i></td>
                                 </tr>
                                 <tr class="col-12" style="border-bottom: 1px solid gainsboro;">
-                                    <td class="col-6">إداره المخزون</td>
+                                    <td class="col-6">إدارة المخزون</td>
                                     <td class="col-2"><i class="lni lni-checkmark-circle text-primary my-3"></i></td>
                                     <td class="col-2"><i class="lni lni-checkmark-circle text-primary"></i></td>
                                     <td class="col-"><i class="lni lni-checkmark-circle text-primary"></i></td>
                                 </tr>
                                 <tr class="col-12" style="border-bottom: 1px solid gainsboro;">
-                                    <td class="col-6">إداره الفئات</td>
+                                    <td class="col-6">إدارة الفئات</td>
                                     <td class="col-2"><i class="lni lni-checkmark-circle text-primary my-3"></i></td>
                                     <td class="col-2"><i class="lni lni-checkmark-circle text-primary"></i></td>
                                     <td class="col-"><i class="lni lni-checkmark-circle text-primary"></i></td>
@@ -221,7 +208,7 @@
 
 
                                 <tr class="col-12" style="border-bottom: 1px solid gainsboro;">
-                                    <td class="col-6">إداره المنيو</td>
+                                    <td class="col-6">إدارة المنيو</td>
                                     <td class="col-2"><i class="lni lni-checkmark-circle text-primary my-3"></i></td>
                                     <td class="col-2"><i class="lni lni-checkmark-circle text-primary"></i></td>
                                     <td class="col-"><i class="lni lni-checkmark-circle text-primary"></i></td>
@@ -234,13 +221,19 @@
                                     <td class="col-"><i class="lni lni-checkmark-circle text-primary"></i></td>
                                 </tr>
                                 <tr class="col-12" style="border-bottom: 1px solid gainsboro;">
-                                    <td class="col-6">إداره المسئوولين</td>
+                                    <td class="col-6">إدارة المسئوولين</td>
                                     <td class="col-2 font"> _</td>
                                     <td class="col-2"><i class="lni lni-checkmark-circle text-primary"></i></td>
                                     <td class="col-"><i class="lni lni-checkmark-circle text-primary my-3"></i></td>
                                 </tr>
                                 <tr class="col-12" style="border-bottom: 1px solid gainsboro;">
-                                    <td class="col-6">إداره الطاولات</td>
+                                    <td class="col-6">إدارة الطاولات</td>
+                                    <td class="col-2">_</td>
+                                    <td class="col-2"><i class="lni lni-checkmark-circle text-primary"></i></td>
+                                    <td class="col-"><i class="lni lni-checkmark-circle text-primary my-3"></i></td>
+                                </tr>
+                                <tr class="col-12" style="border-bottom: 1px solid gainsboro;">
+                                    <td class="col-6">إدارة QR الطاولات</td>
                                     <td class="col-2">_</td>
                                     <td class="col-2"><i class="lni lni-checkmark-circle text-primary"></i></td>
                                     <td class="col-"><i class="lni lni-checkmark-circle text-primary my-3"></i></td>
@@ -298,7 +291,7 @@
 
                                                     <div class="col-md-12">
                                                         <div class="single-input">
-                                                            <select class="form-select" aria-label="Default select example">
+                                                            <select name="content" class="form-select" aria-label="Default select example">
                                                                 <option value="1">باقة الكاشير</option>
                                                                 <option value="2">باقة الويتر</option>
                                                                 <option value="3">باقة إكس ويتر</option>
@@ -328,9 +321,9 @@
                         <div dir="rtl" class="alert alert-success mt-3">
                             {{ session('successSub') }}
                         </div>
-                        @elseif(session('error'))
+                        @elseif(session('failSub'))
                         <div class="alert alert-danger mt-3">
-                            {{ session('error') }}
+                            {{ session('failSub') }}
                         </div>
                         @endif
 
@@ -475,7 +468,7 @@
                             إختر الباقة الأنسب لمطعمك
                         </h3>
                         <p class="wow fadeInUp" data-wow-delay=".4s">
-                            إكس ويتر بيقدملك الحل الامثل لإداره مطعمك أي كان مستواه سواء كنت مطعم للخدمات السريعه او مطعم كبير لخدمة الطاولات
+                            إكس ويتر بيقدملك الحل الامثل لإدارة مطعمك أي كان مستواه سواء كنت مطعم للخدمات السريعه او مطعم كبير لخدمة الطاولات
                         </p>
                     </div>
                 </div>
@@ -608,7 +601,7 @@
 
                                 <div class="col-md-6">
                                     <div class="single-input">
-                                        <input required type="text" id="number" name="phone" class="form-input" placeholder="رقم الهاتف" />
+                                        <input required type="text" id="phone" name="phone" class="form-input" placeholder="رقم الهاتف" />
                                         <i class="lni lni-phone"></i>
                                     </div>
                                 </div>
@@ -625,18 +618,20 @@
                                         <i class="lni lni-comments-alt"></i>
                                     </div>
                                 </div>
-                                <div class="g-recaptcha col-md-12" data-sitekey="6Lc20ZInAAAAAAmchiwawDXFPpU78NZIq4Yl0zbD"></div>
                                 <div class="col-md-12">
                                     <div class="form-button">
-                                        <button type="submit" class="button">
+                                        <button type="submit" class="g-recaptcha button">
                                             <i class="lni lni-telegram-original"></i> إرسال
                                         </button>
                                     </div>
                                 </div>
-
                                 @if(session('success'))
                                 <div dir="rtl" class="alert alert-success mt-3">
                                     {{ session('success') }}
+                                </div>
+                                @elseif(session('fail'))
+                                <div dir="rtl" class="alert alert-danger mt-3">
+                                    {{ session('fail') }}
                                 </div>
                                 @endif
                             </div>
@@ -712,7 +707,7 @@
                         <div class="footer-widget wow fadeInUp" data-wow-delay=".4s">
                             <h6 class="font">الخدمات</h6>
                             <ul class="links">
-                                <li><a onclick="hidePrices()" href="#feature">إداره الطلبات </a></li>
+                                <li><a onclick="hidePrices()" href="#feature">إدارة الطلبات </a></li>
                                 <li><a onclick="hidePrices()" href="#feature">الاونلاين منيو</a></li>
                                 <li><a onclick="hidePrices()" href="#feature">الجداول والاحصائيات</a></li>
                                 <li><a onclick="hidePrices()" href="#feature">تحليل البيانات</a></li>
